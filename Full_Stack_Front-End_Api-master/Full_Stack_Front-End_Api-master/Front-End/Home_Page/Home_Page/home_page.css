@@ -1,0 +1,93 @@
+body {
+font-family: 'Roboto', sans-serif;
+}
+.header {
+position: absolute;
+top: 1rem;
+left: 50%;
+transform: translateX(-50%);
+background-color: white;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 1000px;
+height: 60px;
+border-radius: 20pc;
+z-index: 10;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logo {
+height: 2.5rem;
+width: 2.5rem;
+}
+nav {
+display: flex;
+gap: 1rem;
+}
+nav a {
+padding: 0.5rem 1rem;
+border-radius: 9999px;
+text-decoration: none;
+}
+.nav-home {
+color: white;
+background-color: #38a169;
+}
+.nav-link {
+color: #4a5568;
+}
+.contact-info {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+.contact-info i {
+margin-right: 0.5rem;
+}
+.contact-info a {
+color: #4a5568;
+text-decoration: none;
+}
+.contact-info .contact-button {
+background-color: #38a169;
+color: white;
+padding: 0.5rem 1rem;
+border-radius: 9999px;
+text-decoration: none;
+}
+.animate-on-scroll {
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+.animate-on-scroll.visible {
+opacity: 1;
+}
+footer {
+background-color: #053314;
+color: #fff;
+padding: 2rem 1rem;
+}
+.footer-content {
+display: flex;
+justify-content: space-between;
+max-width: 1200px;
+margin: 0 auto;
+}
+.footer-left, .footer-right {
+width: 45%;
+}
+.footer-left h3, .footer-right h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+}
+.footer-bottom {
+text-align: center;
+margin-top: 2rem;
+padding-top: 1rem;
+border-top: 1px solid #555;
+}
