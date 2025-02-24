@@ -8,30 +8,41 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link rel="stylesheet" href="Contact-Us_Page.css">
-  <link rel="stylesheet" href="../header.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link rel="icon" href="../logo-modified.png" type="image/png"> 
  </head>
  <body class="bg-gray-100">
   <div class="h-20">
   </div>
-  <header class="header">
-    <div class="container">
-      <div class="flex items-center">
-        <img style="position: relative; top: 1vw; border-radius: 19%;" alt="Logo" class="logo" src="../logo.jpeg" />
-      </div>
-      <nav style="position: relative; top: 0.5vw;">
-        <a style="background-color: white; color: #4a5568;" class="nav-home" href="../Home_Page/Home_Page/index.html">Home</a>
-        <a class="nav-link" href="../Services/index.html">Services</a>
-        <a class="nav-link" href="../../Events_Zaid/Not Events/events.html">Events</a>
-        <a class="nav-link" href="../About Us/cycleny.html">About Us</a>
-        <a style="background-color: #38a169; color: white;" class="nav-link" href="../Contact Us Page/Contact-Us_Page.html">Contact us</a>
-      </nav>
-      <div style="position: relative; top: 0.5vw;" class="contact-info">
-        <a  style="background-color: white; color: #4a5568;" class="contact-button" href="../Sign Up _ZaidPage/Sign Up Page/Sign-Up Page.html">Sign Up</a>
-      </div>
+  <header class="header fixed top-4 left-1/2 transform -translate-x-1/2 bg-white shadow-md w-full max-w-4xl h-16 rounded-full z-10">
+    <div class="container mx-auto flex justify-between items-center h-full px-6">
+     <div class="flex items-center">
+      <img alt="Company logo with a modern design" class="logo h-10 w-10" height="40" src="../logo.jpeg" width="40"/>
+     </div>
+     <nav class="flex space-x-4">
+      <a class="nav-link text-gray-700 px-4 py-2 rounded-full" href="../Home_Page/Home_Page/index.html">
+       Home
+      </a>
+      <a class="nav-link text-gray-700 px-4 py-2 rounded-full" href="../Events_Zaid/Not Events/events.html">
+       Events
+      </a>
+      <a class="nav-link text-gray-700 px-4 py-2 rounded-full" href="../Services/index.html">
+       Services
+      </a>
+      <a class="nav-link text-gray-700 px-4 py-2 rounded-full" href="../About Us/cycleny.html">
+       About Us
+      </a>
+      <a class="nav-home text-white bg-green-600 px-4 py-2 rounded-full" href="../Contact Us Page/Contact-Us_Page.html">
+       Contact us
+      </a>
+     </nav>
+     <div class="contact-info flex items-center space-x-4">
+      <a class="contact-button text-white bg-green-600 px-4 py-2 rounded-full" href="../Sign Up _ZaidPage/Sign Up Page/Sign-Up Page.html">
+       Logout
+      </a>
+     </div>
     </div>
-  </header>
+   </header>
 
   <main class="container mx-auto flex flex-col md:flex-row py-12 px-6">
    <section class="flex-1 mb-12 md:mb-0 md:mr-6">
