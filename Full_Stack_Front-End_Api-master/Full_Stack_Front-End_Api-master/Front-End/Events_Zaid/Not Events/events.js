@@ -12,29 +12,46 @@ const API_BASE = "https://cyclenyprojj.runasp.net/api/Events";
      }
 
      function displayEvents(events) {
-         const eventsList = document.getElementById("eventsList");
-         eventsList.innerHTML = "";
-         
-         if (events.length === 0) {
-             document.getElementById("noEvents").classList.remove("hidden");
-             return;
-         }
-         document.getElementById("noEvents").classList.add("hidden");
-         
-         events.forEach(event => {
-             const eventCard = document.createElement("div");
-             eventCard.classList.add("bg-white", "p-4", "rounded", "shadow");
-             eventCard.innerHTML = `
-                 <img src="${event.imageUrl}" class="w-full h-40 object-cover rounded mb-2" alt="Event image for ${event.name}">
-                 <h3 class="text-xl font-bold">${event.name}</h3>
-                 <p>${event.date} - ${event.location}</p>
-                 <button onclick="editEvent(${event.id})" class="bg-blue-600 text-white px-2 py-1 mt-2 rounded">Edit</button>
-                 <button onclick="deleteEvent(${event.id})" class="bg-red-600 text-white px-2 py-1 mt-2 rounded">Delete</button>
-             `;
-             eventsList.appendChild(eventCard);
-         });
-     }
-
+        const eventsList = document.getElementById("eventsList");
+        eventsList.innerHTML = "";
+    
+        if (events.length === 0) {
+            document.getElementById("noEvents").classList.remove("hidden");
+            return;
+        }
+        document.getElementById("noEvents").classList.add("hidden");
+    
+        const userEmail = localStorage.getItem("userEmail"); // Get logged-in user email
+        const isAdmin = userEmail === "Admin@gmail.com"; // Check if user is admin
+    
+        events.forEach(event => {
+            const eventCard = document.createElement("div");
+            eventCard.classList.add("bg-white", "p-4", "rounded", "shadow");
+    
+            let buttonsHTML = "";
+            if (isAdmin) {
+                buttonsHTML = `
+                    <button onclick="editEvent(${event.id})" class="bg-blue-600 text-white px-2 py-1 mt-2 rounded">Edit</button>
+                    <button onclick="deleteEvent(${event.id})" class="bg-red-600 text-white px-2 py-1 mt-2 rounded">Delete</button>
+                `;
+            }
+    
+            eventCard.innerHTML = `
+                <img src="${event.imageUrl}" class="w-full h-40 object-cover rounded mb-2" alt="Event image for ${event.name}">
+                <h3 class="text-xl font-bold">${event.name}</h3>
+                <p>${event.date} - ${event.location}</p>
+                ${buttonsHTML} 
+            `;
+    
+            eventsList.appendChild(eventCard);
+        });
+    
+        // Hide "Add Event" button for non-admin users
+        if (!isAdmin) {
+            document.getElementById("addEventBtn").style.display = "none";
+        }
+    }
+    
      function searchEvents() {
          const query = document.getElementById("searchInput").value.toLowerCase();
          const filteredEvents = eventsData.filter(event =>
